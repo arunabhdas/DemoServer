@@ -23,7 +23,9 @@ const server = app.listen(port, host, () => {
 // Shutdown Node.js app gracefully
 function handleExit(options, err) {
   if (options.cleanup) {
-    const actions = [server.close, db.destroy];
+    // const actions = [server.close, db.destroy];
+    // Commenting out db.destroy TODO
+    const actions = [server.close];
     actions.forEach((close, i) => {
       try {
         close(() => {

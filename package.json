@@ -109,6 +109,6 @@
     "db:seed:all": "sequelize db:seed:all",
     "db:migrate:undo": "sequelize db:migrate:undo",
     "db:migrate:undo:all": "sequelize db:migrate:undo:all",
-    "db:model:generate" : "sequelize model:generate"
+    "db:model:generate": "sequelize model:generate"
   }
 }

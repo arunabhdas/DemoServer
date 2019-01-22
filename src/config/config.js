@@ -1,10 +1,9 @@
 module.exports = {
   development: {
-    username: 'postgres',
-    password: 'postgres',
-    database: 'wilsontest',
-    host: 'localhost',
+    database: 'wilson_dev_db',
+    host: '127.0.0.1',
     dialect: 'postgres',
+    port: '5432',
   },
   production: {
     username: process.env.DB_USERNAME,

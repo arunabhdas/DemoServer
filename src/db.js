@@ -2,8 +2,9 @@
 const Sequelize = require('sequelize');
 const Umzug = require('umzug');
 
-export const sequelize = new Sequelize('wilsontest', 'postgres', 'postgres', {
-  host: 'localhost',
+export const sequelize = new Sequelize('wilson_dev_db', 'admin', 'wilson123', {
+  host: '127.0.0.1',
+  port: '5432',
   dialect: 'postgres',
   operatorsAliases: false,
   pool: {
@@ -15,6 +16,7 @@ export const sequelize = new Sequelize('wilsontest', 'postgres', 'postgres', {
 });
 
 const location = 'migrations';
+/* 
 const umzug = new Umzug({
   storage: 'sequelize',
   storageOptions: {
@@ -30,7 +32,7 @@ const umzug = new Umzug({
   },
 });
 
-/* eslint-disable-next-line import/prefer-default-import */
+// eslint-disable-next-line import/prefer-default-import 
 const runMigrations = async () => {
   try {
     console.log(new Date().toString(), 'running umzug migrations.');
@@ -50,3 +52,4 @@ runMigrations()
     console.log('umzug completed ..');
   })
   .catch(console.log);
+*/

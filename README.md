@@ -277,3 +277,47 @@ Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya), [bl
 [i18nextback]: https://github.com/i18next/i18next-node-fs-backend
 [jest]: http://facebook.github.io/jest/
 [gitter]: https://gitter.im/kriasoft/nodejs-api-starter
+
+# Build 
+~~~
+## Build and Run
+yarn install
+yarn run build
+node build/db.js
+yarn run start
+~~~
+
+# Postgres
+~~~
+==> psql postgres
+psql (9.3.5, server 9.6.6)
+WARNING: psql major version 9.3, server major version 9.6.
+         Some psql features might not work.
+Type "help" for help.
+
+postgres=# CREATE ROLE admin WITH LOGIN PASSWORD 'wilson123'
+postgres-# ALTER ROLE admin CREATEDB;
+ERROR:  syntax error at or near "ALTER"
+LINE 2: ALTER ROLE admin CREATEDB;
+        ^
+postgres=# ALTER ROLE admin CREATEDB;
+ALTER ROLE
+postgres=# \q
+~/repos/ad/githubrepos/DemoServer (master) 
+==> psql -d posgres -U admin
+psql: FATAL:  database "posgres" does not exist
+~/repos/ad/githubrepos/DemoServer (master) 
+==> psql -d postgres -U admin
+psql (9.3.5, server 9.6.6)
+WARNING: psql major version 9.3, server major version 9.6.
+         Some psql features might not work.
+Type "help" for help.
+
+postgres=> CREATE DATABASE wilson_dev_db;
+CREATE DATABASE
+postgres=> \c wilson_dev_db
+psql (9.3.5, server 9.6.6)
+WARNING: psql major version 9.3, server major version 9.6.
+         Some psql features might not work.
+You are now connected to database "wilson_dev_db" as user "admin".
+~~~
